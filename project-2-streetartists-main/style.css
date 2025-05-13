@@ -1,0 +1,723 @@
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-bottom: 0 !important;
+}
+
+main {
+  padding-top: 58px;
+}
+
+/* Colors */
+.bg-body-color-light {
+  background-color: #fcebd5;
+}
+
+.bg-color-light {
+  background-color: #edd5bb;
+}
+
+.bg-color-dark {
+  background-color: #a16a5e;
+}
+
+.font-color-dark-brown {
+  color: #a16a5e;
+}
+
+.font-color-light {
+  color: #fcebd5;
+}
+
+/* Fonts */
+.reenie-font {
+  font-family: "Reenie Beanie", cursive;
+}
+
+.roboto-font {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Layout Classes */
+.page {
+  display: none;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+/* Header */
+header {
+  z-index: 3;
+  background-color: #fcebd5;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.headerName {
+  font-size: 27px;
+  margin-top: 10px;
+  margin-left: -5px;
+}
+
+#headerLogo {
+  width: 84px;
+  margin-bottom: -20px;
+  cursor: pointer;
+}
+
+.auctionIcon {
+  width: 59px;
+  cursor: pointer;
+}
+
+.hamburgerMenu {
+  background-color: transparent;
+  border: none;
+}
+
+.hamburgerMenu i {
+  font-size: 1.3em;
+}
+
+.hamburgerMenuDiv {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: -62px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  transition: top 1s ease-in-out;
+}
+
+.hamburgerMenuDiv a {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.hamburgerMenuDiv a:hover {
+  color: white;
+}
+
+.hamburger-active {
+  top: 56px;
+}
+
+.back {
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+/* Landing Page */
+#landingPageLogo {
+  width: 145px;
+}
+
+.landing-page-heading {
+  font-size: 2em;
+}
+
+.menu {
+  width: 260px;
+  height: 392px;
+}
+
+.artist {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 30%);
+}
+
+.artist:hover,
+.visitor:hover {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.05);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.visitor {
+  margin-top: -400px;
+  clip-path: polygon(0 30%, 100% 70%, 100% 100%, 0% 100%);
+  cursor: pointer;
+}
+
+.visitor h2 {
+  position: relative;
+  z-index: 3;
+  padding-top: 300px;
+}
+
+#landingPage select {
+  width: 50%;
+  background-color: transparent;
+  padding: 3px;
+  border: 1px solid #a16a5e;
+  border-radius: 3px;
+  float: right;
+  cursor: pointer;
+}
+
+#landingPage select:disabled {
+  color: #a16a5e;
+}
+
+#landingPage h2 {
+  font-size: 2.1em;
+}
+
+/* Visitor Page */
+#visitor-inner {
+  display: none;
+  background-color: #edd5bb;
+  position: relative;
+  height: calc(100vh - 70px);
+}
+
+.lookingForMasterpiece {
+  position: absolute;
+  width: 50%;
+  top: 100px;
+  left: 10px;
+  color: #a26a5e;
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 500;
+}
+
+.bricks {
+  position: relative;
+  margin-top: 5px;
+}
+
+.find-art-btn {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  background-color: #a26a5e;
+  border: none;
+  color: #fcebd5;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+/* Slider */
+.slider-wrapper {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.mySlides {
+  width: 250px;
+  height: 150px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  perspective: 100px;
+}
+
+.mySlides > img {
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.slide-track {
+  width: calc(250px * 6);
+  animation: slide 10s linear infinite;
+}
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
+.lower-slide {
+  animation: slide-left 10s linear infinite;
+}
+
+.lower-slide:hover {
+  animation-play-state: paused;
+}
+
+/* Keyframes za animacijata na mySlides da funkcionira */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 1));
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(calc(-250px * 1));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* carousel Css */
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: #a16a5e;
+  cursor: pointer;
+  position: absolute;
+  font-size: 50px;
+  top: 0;
+  z-index: 3;
+}
+
+.border-right {
+  border-right: 1px solid #a16a5e !important;
+}
+
+.box {
+  background-color: #e09686;
+  color: white;
+  overflow: visible;
+  padding: 20px !important;
+}
+
+.car-text {
+  font-size: 10px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: -50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcebd5;
+}
+
+.circle img {
+  max-width: 100%;
+  max-height: auto;
+  object-fit: cover;
+}
+
+/* Visitor Listing */
+#visitorListingItems {
+  position: relative;
+  height: 80vh;
+}
+
+.filters-button,
+.filter-button-done {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #d54c2e;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
+  border: none;
+  right: 30px;
+  bottom: 30px;
+  z-index: 2;
+}
+
+.filters-button img,
+.filter-button-done img {
+  width: 30px;
+}
+
+#visitorListingItems i {
+  font-size: 1.5em;
+}
+
+.filter-menu {
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 2;
+  top: 58px;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+  transition: right 1s ease-in-out;
+}
+
+.filter-menu-active {
+  right: 0;
+}
+
+.filter-menu h5 {
+  font-size: 0.9em;
+}
+
+.filter-menu input {
+  background-color: transparent;
+  border: 1px solid #edd5bb;
+}
+
+.filter-menu input::placeholder {
+  color: #edd5bb;
+}
+
+.filter-menu hr {
+  margin-left: auto;
+  margin-right: auto;
+  border-color: #edd5bb;
+  margin: 35px 0;
+}
+
+.filter-menu select,
+.newItemMenu select {
+  background-color: transparent;
+  width: 130px;
+  padding: 3px;
+  border: 1px solid #edd5bb;
+  color: #edd5bb;
+  border-radius: 3px;
+}
+
+#min-price-input,
+#max-price-input {
+  width: 130px;
+}
+
+.filter-button-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+}
+
+/* Art Card */
+.art-card {
+  background-color: #fcebd5;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+  margin-top: 40px;
+}
+
+.inverse-card {
+  background-color: #a26a5e;
+}
+
+.image-div {
+  height: 150px;
+  overflow: hidden;
+}
+
+.image-div img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.price {
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+.card-desc {
+  font-size: 0.8em;
+}
+
+/* Artists Page */
+.auctioning-div {
+  background-color: #d54c2e;
+}
+
+.chart-buttons button {
+  border: none;
+  font-size: 0.8em;
+  background-color: #a16a5e;
+  color: #fcebd5;
+  border-radius: 2px;
+  padding: 5px 20px;
+}
+
+.chart-buttons button:hover {
+  background-color: #d54c2e;
+}
+
+/* Artists Items Page */
+.newItem {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.newItemInner {
+  border: 2px dashed #a26a5e;
+}
+
+.newItemMenu,
+.cameraMenu {
+  top: 58px;
+  width: 100%;
+  bottom: 0;
+  right: -100%;
+  transition: right 1s ease-in-out;
+  overflow: scroll;
+  overscroll-behavior: none;
+}
+
+.newItemMenuActive,
+.cameraMenuActive {
+  right: 0;
+}
+
+#isPublished {
+  margin-left: 5px;
+}
+
+.newItemMenu input:not(input[type="checkbox"]),
+.newItemMenu textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #edd5bb;
+  color: #edd5bb;
+}
+
+.newItemMenu input::placeholder,
+.newItemMenu textarea::placeholder {
+  color: #edd5bb;
+}
+
+.renderImageDiv {
+  width: 100%;
+  height: 290px;
+  border: 2px dashed #fcebd5;
+  border-radius: 2px;
+}
+
+@media only screen and (min-width: 720px) {
+  .renderImageDiv,
+  .or {
+    display: none !important;
+  }
+}
+
+.renderImageDiv i {
+  font-size: 3em;
+  cursor: pointer;
+}
+
+.addNewItemBtn,
+.cancelNewItemBtn,
+.saveItemBtn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.addNewItemBtn,
+.saveItemBtn {
+  background-color: #d54c2e;
+  color: #fcebd5;
+}
+
+.cancelNewItemBtn {
+  background-color: #e5e5e5;
+  color: #5a5a5a;
+}
+
+.cameraCanvas {
+  width: 100%;
+  height: 90%;
+  background-color: transparent;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+
+.takePhoto {
+  font-size: 3em;
+  cursor: pointer;
+}
+
+/* Artist Card UI */
+.cardDiv {
+  margin-top: 20px;
+  background-color: #fcebd5;
+  border-radius: 2px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.cardDiv input,
+.cardDiv textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #a16a5e;
+  border-radius: 3px;
+  color: #a16a5e;
+}
+
+.cardDiv .price-input {
+  width: 50px;
+  border-bottom: 1px solid #edd5bb;
+  color: #edd5bb;
+}
+
+.cardDiv .desc-input {
+  width: 100%;
+}
+
+.desc {
+  font-size: 1em !important;
+}
+
+.imageDiv {
+  width: 100%;
+  height: 180px;
+  max-width: 100%;
+}
+
+.cardDiv p:not(.price) {
+  font-size: 0.7em;
+}
+
+.buttons {
+  font-size: 0.7em;
+}
+
+.buttons > button {
+  border: none;
+  padding: 3px 10px;
+  color: #f8f8f8;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.auctionBtn {
+  background-color: #1b59ac;
+}
+
+.unPublishBtn {
+  background-color: #1bac6f !important ;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.publishBtn {
+  background-color: #e5e5e5 !important;
+  color: #5a5a5a !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.removeBtn {
+  background-color: #d54c2e;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.editBtn {
+  color: #a16a5e !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.alert,
+.auctionAlert {
+  position: fixed;
+  z-index: 10;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -130px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  transition: top 0.5s ease-in-out;
+}
+
+.alert-active,
+.auctionAlert-active {
+  top: 10px;
+}
+
+/* Auction Page */
+#auction input {
+  border: none;
+  border-bottom: 2px solid #a16a5e;
+  background-color: transparent;
+  text-align: center;
+}
+
+.currentBid {
+  background-color: #a16a5e;
+  color: #fcebd5;
+  width: 40%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.auctionImage {
+  width: 100%;
+}
+
+.bidBtn {
+  border: none;
+  background-color: rgb(163, 44, 44);
+  color: #fcebd5;
+  padding: 10px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+
+#biddings,
+#otherBidding {
+  padding: 0;
+}
+
+.bid {
+  list-style: none;
+  background-color: green;
+  color: #edd5bb;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+.otherBid {
+  list-style: none;
+  background-color: rgb(182, 23, 23);
+  color: #edd5bb;
+  padding: 13px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+.price-bg {
+  border-radius: 3px;
+}
+
+.auctionDescription {
+  font-size: 0.8em;
+  padding: 10px;
+}
